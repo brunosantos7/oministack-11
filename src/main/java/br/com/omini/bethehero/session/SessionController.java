@@ -15,7 +15,6 @@ import br.com.omini.bethehero.ong.OngRepository;
 @RequestMapping("/session")
 @RestController
 public class SessionController {
-	
 
 	private OngRepository ongRepository;
 	

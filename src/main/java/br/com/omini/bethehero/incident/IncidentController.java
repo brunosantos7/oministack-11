@@ -2,8 +2,6 @@ package br.com.omini.bethehero.incident;
 
 import java.util.Optional;
 
-import javax.management.BadAttributeValueExpException;
-
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -45,7 +43,7 @@ public class IncidentController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteIncident(@PathVariable Long id, @RequestHeader("Authorization") Long ongId) throws BadAttributeValueExpException {
+	public void deleteIncident(@PathVariable Long id, @RequestHeader("Authorization") Long ongId) {
 		Optional<Incident> incident = this.incidentRepository.findById(id);
 		Ong ong = incident.isPresent() ? incident.get().getOng() : new Ong();
 		
